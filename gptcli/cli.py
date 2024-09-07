@@ -15,13 +15,7 @@ from gptcli.session import (ALL_COMMANDS, COMMAND_CLEAR, COMMAND_QUIT,
                             COMMAND_RERUN, ChatListener, InvalidArgumentError,
                             ResponseStreamer, UserInputProvider)
 
-TERMINAL_WELCOME = """
-Hi! I'm here to help. Type `:q` or Ctrl-D to exit, `:c` or Ctrl-C and Enter to clear
-the conversation, `:r` or Ctrl-R to re-generate the last response.
-To enter multi-line mode, enter a backslash `\\` followed by a new line.
-Exit the multi-line mode by pressing ESC and then Enter (Meta+Enter).
-Try `:?` for help.
-"""
+TERMINAL_WELCOME = ''
 
 
 class StreamingMarkdownPrinter:
@@ -47,7 +41,7 @@ class StreamingMarkdownPrinter:
             self.live.update(content)
             self.live.refresh()
         else:
-            self.console.print(Text(text, style="green"), end="")
+            self.console.print(Text(text, style=None), end="")
 
     def __exit__(self, *args):
         if self.markdown:
