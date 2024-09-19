@@ -109,6 +109,9 @@ class CLIChatListener(ChatListener):
 
 def parse_args(input: str) -> Tuple[str, Dict[str, Any]]:
     # Extract parts enclosed in specific delimiters (triple backticks, triple quotes, single backticks)
+    if True:
+        return input, {}
+
     extracted_parts = []
     delimiters = ['```', '"""', '`']
 
